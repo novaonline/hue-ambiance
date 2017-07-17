@@ -1,6 +1,6 @@
 {
   "name": "hue-ambiance",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "ambilighting app",
   "main": "main.js",
   "scripts": {
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/novaonline/hue-ambiance/issues"
   },
-  "homepage": "https://github.com/novaonline/hue-ambiance#readme"
+  "homepage": "https://github.com/novaonline/hue-ambiance#readme",
+  "dependencies": {
+    "electron": "^1.6.11",
+    "node-notifier": "^5.1.2"
+  }
 }
