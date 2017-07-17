@@ -1,0 +1,23 @@
+{
+  "name": "hue-ambiance",
+  "version": "1.0.0",
+  "description": "ambilighting app",
+  "main": "main.js",
+  "scripts": {
+    "run": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/novaonline/hue-ambiance.git"
+  },
+  "keywords": [
+    "ambilight",
+    "electron"
+  ],
+  "author": "Emmanuel Quagraine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/novaonline/hue-ambiance/issues"
+  },
+  "homepage": "https://github.com/novaonline/hue-ambiance#readme"
+}
