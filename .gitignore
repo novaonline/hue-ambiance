@@ -58,4 +58,4 @@ typings/
 .env
 
 #custom
-config/hue.json
+poc/config/hue.json
