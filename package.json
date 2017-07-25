@@ -22,7 +22,9 @@
   "homepage": "https://github.com/novaonline/hue-ambiance#readme",
   "dependencies": {
     "electron": "^1.6.11",
+    "handlebars": "^4.0.10",
     "node-hue-api": "^2.4.2",
-    "node-notifier": "^5.1.2"
+    "node-notifier": "^5.1.2",
+    "semantic-ui": "^2.2.11"
   }
 }

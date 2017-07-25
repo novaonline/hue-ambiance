@@ -1,0 +1,28 @@
+<div>
+  <div class="description">
+    <h2 class="ui center aligned icon header">
+      <i class="circular tv icon"></i> <span class="span-application-name">{{app}}</span>
+  </div>
+  <div id="screen-selector">
+    {{!-- screen selectors --}}
+  </div>
+  <div class='screen-preview'>
+    <canvas id='screen-preview-video'>
+      {{!-- When a screen selector is clicked, the video preview comes here. It can be hidable --}}
+    </canvas>
+  </div>
+  <div class="light-setup">
+    <div id="bridge-registration">
+      {{!-- this panel will have the information about the bridge--}}
+    </div>
+    <div id="light-bulb-cards">
+      {{!-- these are cards about each lightbulb. These cards can be dragged into palette slot --}}
+    </div>
+    <div id="palette-slots-with-preview">
+      {{!-- these palettes are used to preview the color outcome and act as slots for lightbulbs --}}
+    </div>
+  </div>
+  <div id="controls">
+    {{!-- controls for the hue scene (i.e play and stop) --}}
+  </div>
+</div>
