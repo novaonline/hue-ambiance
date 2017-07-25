@@ -1,0 +1,15 @@
+<div id="palette-group-selector" class="ui three column grid">
+
+  {{#each palettes}}
+  <div class="column">
+    <div id="{{selector}}" class="ui segment" style=" background-color:{{color}}">
+      <div class="{{#if lightId}}{{else}}empty-color-area{{/if}}" style="min-width: 100px; min-height: 100px; background-color:white; ">
+        <div>
+          {{lightId}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+
+</div>

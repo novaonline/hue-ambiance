@@ -1,0 +1,15 @@
+<div id="light-bulb-group-selector" class="ui three column grid">
+
+  {{#each lightBulbs}}
+  <div class="column">
+    <div id="{{selector}}" class="ui segment">
+      <div style="min-width: 100px; min-height: 100px; background-color:white; ">
+        <div>
+          {{lightId}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+
+</div>

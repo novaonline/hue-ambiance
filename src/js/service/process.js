@@ -46,25 +46,12 @@ const grabSnapshot = (video) => {
   return bmp;
 }
 
-const generatePreview = (colorAvg) => {
-  //console.log(colorAvg);
-  var canvas = document.getElementById("preview");
-  var ctx = canvas.getContext("2d");
-  colorAvg.forEach(function (element, idx) {
-    const color = `rgb(${Math.round(element[0])},${Math.round(element[1])},${Math.round(element[2])})`;
-    var options = {
-      x: idx * (canvas.width / 4),
-      y: 0,
-      width: canvas.width / 4,
-      height: canvas.height / 4,
-
-    }
-    //console.log(idx, color, options)
-    ctx.fillStyle = color;
-    ctx.fillRect(options.x, options.y, options.width, options.height);
-  }, this);
+const paletteToRGB = (palette) => {
+  return palette.map((element) => {
+    return `rgb(${Math.round(element[0])},${Math.round(element[1])},${Math.round(element[2])})`;
+  })
 }
 
 exports.grabSnapshot = grabSnapshot;
 exports.getPaletteFromBitmap = getPaletteFromBitmap;
-exports.generatePreview = generatePreview;
+exports.paletteToRGB = paletteToRGB;

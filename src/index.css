@@ -10,3 +10,7 @@
 body{
   background-color:beige!important;
 }
+
+.empty-color-area {
+  border: dashed grey;
+}

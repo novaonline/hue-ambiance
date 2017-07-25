@@ -4,7 +4,7 @@
   "description": "ambilighting app",
   "main": "main.js",
   "scripts": {
-    "run": "electron main.js"
+    "start": "electron main.js"
   },
   "repository": {
     "type": "git",

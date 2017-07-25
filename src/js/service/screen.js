@@ -1,7 +1,8 @@
 const { desktopCapturer } = require('electron');
 const {
   grabSnapshot,
-  getPaletteFromBitmap
+  getPaletteFromBitmap,
+  paletteToRGB
 } = require('./process');
 
 // Globals
@@ -26,6 +27,7 @@ function loop() {
   const bmp = grabSnapshot(window._video);
   const averages = getPaletteFromBitmap(bmp.data);
   console.log(averages);
+  window.PaletteComponents.previewColors(paletteToRGB(averages));
   //generatePreview(averages);
   //ambilightManual(averages);
 }
