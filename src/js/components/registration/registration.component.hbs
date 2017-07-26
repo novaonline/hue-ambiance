@@ -1,3 +1,17 @@
-<div>
-  Hello {{componentName}}
+<div id="{{selector}}" class="ui segment">
+  <div class="ui list">
+    <div class="item">
+      <div class="header">Bridge</div>
+      using <em>{{#if bridgeIp}}{{bridgeIp}}{{else}}nothing{{/if}}</em> {{ipDetectionType}}
+    </div>
+    <div class="item">
+      <div class="header">Username</div>
+      using <em>{{#if userName}}{{userName}}{{else}}nothing{{/if}}</em> {{userNameDetectionType}}
+    </div>
+    <div class="item">
+      <div class="header">Scene</div>
+      using <em>{{#if sceneId}}{{sceneId}}{{else}}nothing{{/if}}</em> {{sceneDetectionType}} {{!-- Add a tooltip with the
+      following message: "Scenes are automatically created" --}}
+    </div>
+  </div>
 </div>

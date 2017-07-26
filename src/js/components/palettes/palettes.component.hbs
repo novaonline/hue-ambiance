@@ -1,9 +1,9 @@
-<div id="palette-group-selector" class="ui three column grid">
+<div id="palette-group-selector" class="ui grid">
 
   {{#each palettes}}
-  <div class="column">
-    <div id="{{selector}}" class="ui segment" style=" background-color:{{color}}">
-      <div class="{{#if lightId}}{{else}}empty-color-area{{/if}}" style="min-width: 100px; min-height: 100px; background-color:white; ">
+  <div class="eight wide mobile eight wide tablet four wide computer column">
+    <div id="{{selector}}" data-id={{@index}} class="ui segment" style=" background-color:{{color}}">
+      <div data-id={{@index}} class="{{#if lightId}}{{else}}empty-color-area{{/if}}" style="min-width: 100px; min-height: 100px; background-color:white; ">
         <div>
           {{lightId}}
         </div>

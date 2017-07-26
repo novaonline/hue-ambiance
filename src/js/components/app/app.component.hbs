@@ -3,26 +3,33 @@
     <h2 class="ui center aligned icon header">
       <i class="circular tv icon"></i> <span class="span-application-name">{{app}}</span>
   </div>
-  <div id="screen-selector">
+  <h4 class="ui horizontal divider header">
+    <i class="bar window maximize icon"></i> Screen
+  </h4>
+  <div class="ui container" id="screen-selector">
     {{!-- screen selectors --}}
   </div>
-  <div class='screen-preview'>
-    <canvas id='screen-preview-video'>
-      {{!-- When a screen selector is clicked, the video preview comes here. It can be hidable --}}
-    </canvas>
+  <h4 class="ui horizontal divider header">
+    <i class="bar disk outline icon"></i> Registration
+  </h4>
+  <div class="ui container" id="bridge-registration">
+    {{!-- this panel will have the information about the bridge--}}
   </div>
-  <div class="light-setup">
-    <div id="bridge-registration">
-      {{!-- this panel will have the information about the bridge--}}
-    </div>
-    <div id="light-bulb-cards">
-      {{!-- these are cards about each lightbulb. These cards can be dragged into palette slot --}}
-    </div>
-    <div id="palette-slots-with-preview">
-      {{!-- these palettes are used to preview the color outcome and act as slots for lightbulbs --}}
-    </div>
+  <h4 class="ui horizontal divider header">
+    <i class="bar paint brush icon"></i> Light Assignments
+  </h4>
+  <div class="ui container" id="light-bulb-cards">
+    {{!-- these are cards about each lightbulb. These cards can be dragged into palette slot --}}
   </div>
-  <div id="controls">
-    {{!-- controls for the hue scene (i.e play and stop) --}}
+  <div class="ui container" id="palette-slots-with-preview">
+    {{!-- these palettes are used to preview the color outcome and act as slots for lightbulbs --}}
+  </div>
+  <h4 class="ui horizontal divider header">
+    <i class="bar video play outline icon"></i> Controls
+  </h4>
+  <div class="ui center aligned container">
+    <div id="controls">
+      {{!-- controls for the hue scene (i.e play and stop) --}}
+    </div>
   </div>
 </div>

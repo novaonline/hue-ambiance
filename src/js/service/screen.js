@@ -4,6 +4,7 @@ const {
   getPaletteFromBitmap,
   paletteToRGB
 } = require('./process');
+const { ambilightManual } = require('./hue');
 
 // Globals
 window._canvas = window._canvas || document.createElement('canvas');
@@ -26,10 +27,10 @@ function handleError(e) {
 function loop() {
   const bmp = grabSnapshot(window._video);
   const averages = getPaletteFromBitmap(bmp.data);
-  console.log(averages);
+  //console.log(averages);
   window.PaletteComponents.previewColors(paletteToRGB(averages));
   //generatePreview(averages);
-  //ambilightManual(averages);
+  ambilightManual(averages);
 }
 
 function handleStream(mediaStream) {
@@ -77,8 +78,25 @@ function stop() {
   clearInterval(window.intervalId)
 }
 
+const isMostlyBlack = (source) => {
+  const avg = source.thumbnail.resize({ width: 1, height: 1 }).toBitmap()
+  if (avg[0] < 8 && avg[1] < 8 && avg[2] < 8) {
+    return true;
+  }
+  return false;
+}
+
+const getSources = new Promise((resolve, reject) => {
+  desktopCapturer.getSources({ types: ['window', 'screen'] }, (error, sources) => {
+    if (error) throw error;
+    return resolve(sources);
+  })
+});
+
 module.exports = {
   setupScreen: setupScreen,
   play: play,
   stop: stop,
+  isMostlyBlack: isMostlyBlack,
+  getSources: getSources,
 }

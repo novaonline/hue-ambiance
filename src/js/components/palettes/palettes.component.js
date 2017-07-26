@@ -29,17 +29,50 @@ class Palettes extends View {
     })
   }
   previewColors(palette) {
-    palette.forEach(function(element, idx) {
+    palette.forEach(function (element, idx) {
       const dataEl = this.data.palettes[idx];
       dataEl.color = element;
-      document.querySelector('#'+dataEl.selector).style.backgroundColor = dataEl.color;
+      document.querySelector('#' + dataEl.selector).style.backgroundColor = dataEl.color;
     }, this);
   }
   wireEvents() {
-    const events = {};
-    for (const key in events) {
-      document.querySelector(this.selector)[key] = events[key];
-    }
+    const events = {
+      ondragover: (e) => {
+        e.preventDefault();
+      },
+      ondrop: (e) => {
+        e.preventDefault();
+        var data = e.dataTransfer.getData("text");
+        const lightId = document.getElementById(data).dataset.id;
+        const colorId = e.target.dataset.id;
+        //   console.log(document.getElementById(data).dataset.id,
+        //   e.target.dataset.id
+        // )
+        this.data.palettes[colorId].lightId = lightId;
+        this.updateLightIds();
+        // add the color id to the palette
+        //e.target.appendChild(document.getElementById(data));
+      }
+    };
+    this.data.palettes.forEach(function (element) {
+      for (const key in events) {
+        document.querySelector('#' + element.selector)[key] = events[key];
+      }
+    }, this);
+  }
+  updateLightIds() {
+    this.data.palettes.forEach(function (element) {
+      const light = window.LightBulbsComponents.data.lightBulbs.find(x => x.lightId === element.lightId);
+      if (light) {
+        document.querySelector('#' + element.selector).children[0]
+          .children[0]
+          .innerHTML = light.name;
+        if (element.lightId) {
+          document.querySelector('#' + element.selector).children[0].classList.remove('empty-color-area')
+        }
+      }
+
+    }, this);
   }
 }
 

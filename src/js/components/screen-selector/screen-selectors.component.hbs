@@ -1,2 +1,9 @@
 <div id="screen-selectors-grid" class="ui three column grid">
+  {{#each screens}}
+  <div id={{selector}} data-id={{source.id}} class="screen-selector-item column">
+    <div data-id={{source.id}} class="ui {{#if selected}}green{{/if}}  segment">
+      <img class="ui medium image centered " src={{imageBase64}}>
+    </div>
+  </div>
+  {{/each}}
 </div>

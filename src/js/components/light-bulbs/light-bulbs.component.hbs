@@ -1,11 +1,14 @@
-<div id="light-bulb-group-selector" class="ui three column grid">
+<div id="light-bulb-group-selector" class="ui grid">
 
   {{#each lightBulbs}}
-  <div class="column">
-    <div id="{{selector}}" class="ui segment">
-      <div style="min-width: 100px; min-height: 100px; background-color:white; ">
+  <div class="four wide mobile four wide tablet four wide computer column">
+    <div id="{{selector}}" data-id="{{lightId}}" class="ui segment" draggable="true">
+      <div style="background-color:white; ">
         <div>
-          {{lightId}}
+          <h2 class="ui header">
+            <i class="fitted idea icon"></i>
+            {{name}}
+          </h2>
         </div>
       </div>
     </div>
